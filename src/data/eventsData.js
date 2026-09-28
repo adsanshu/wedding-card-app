@@ -1,57 +1,38 @@
-export const weddingData = {
-  brideName: "Pushpanjali Sharma",
-  groomName: "Govinda Sharma",
-  weddingMonthYear: "March 2027",
-  weddingPasscode: "032027",
-
-  family: {
-    parents: {
-      father: "Hiralal Sharma",
-      mother: "Manju Sharma",
-    },
-    grandParents: {
-      grandfather: "Late Shukdev Sharma",
-      grandmother: "Kabutari Devi",
-    },
+export const eventsData = [
+  {
+    id: "haldi-mehendi",
+    title: "Haldi & Mehendi Ceremony",
+    hindiTitle: "हरिद्रा एवं मेंहदी समारोह",
+    date: "March 2027",
+    time: "10:00 AM Onwards",
+    venue: "Home Venue",
+    description: "Shubh karya ki shuruaat haldi aur mehendi ki rasam ke saath.",
   },
-
-  events: [
-    {
-      id: "haldi-mehendi",
-      title: "Haldi & Mehendi Ceremony",
-      hindiTitle: "हरिद्रा एवं मेंहदी समारोह",
-      date: "March 2027",
-      time: "10:00 AM Onwards",
-      venue: "Home Venue",
-      description: "Shubh karya ki shuruaat haldi aur mehendi ki rasam ke saath.",
-    },
-    {
-      id: "sangeet",
-      title: "Sangeet Sandhya",
-      hindiTitle: "संगीत संध्या",
-      date: "March 2027",
-      time: "06:00 PM Onwards",
-      venue: "Banquet Hall",
-      description: "Nritaya aur sangeet ke saath anandmaye shaam.",
-    },
-    {
-      id: "baraat-vivah",
-      title: "Baraat Swagat & Shubh Vivah",
-      hindiTitle: "बारात आगमन एवं शुभ विवाह",
-      date: "March 2027",
-      time: "07:00 PM Onwards",
-      venue: "Marriage Lawn",
-      description: "Baraat swagat aur vedic reeti-riwaaz se shubh vivah.",
-    },
-    {
-      id: "reception",
-      title: "Aashirwad Samaroh",
-      hindiTitle: "आशीर्वाद समारोह एवं प्रीतिभोज",
-      date: "March 2027",
-      time: "07:30 PM Onwards",
-      venue: "Banquet Hall",
-      description: "Nav-dampati ko aashirwad aur preetibhoj.",
-    },
-  ],
-};
-
+  {
+    id: "sangeet",
+    title: "Sangeet Sandhya",
+    hindiTitle: "संगीत संध्या",
+    date: "March 2027",
+    time: "06:00 PM Onwards",
+    venue: "Banquet Hall",
+    description: "Nritaya aur sangeet ke saath anandmaye shaam.",
+  },
+  {
+    id: "baraat-vivah",
+    title: "Baraat Swagat & Shubh Vivah",
+    hindiTitle: "बारात आगमन एवं शुभ विवाह",
+    date: "March 2027",
+    time: "07:00 PM Onwards",
+    venue: "Marriage Lawn",
+    description: "Baraat swagat aur vedic reeti-riwaaz se shubh vivah.",
+  },
+  {
+    id: "reception",
+    title: "Aashirwad Samaroh",
+    hindiTitle: "आशीर्वाद समारोह एवं प्रीतिभोज",
+    date: "March 2027",
+    time: "07:30 PM Onwards",
+    venue: "Banquet Hall",
+    description: "Nav-dampati ko aashirwad aur preetibhoj.",
+  },
+];
