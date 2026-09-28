@@ -1,14 +1,15 @@
 
 export const familyData = {
-  brideName: "Pushpanjali Sharma",
-  groomName: "Govinda Sharma",
-  weddingMonthYear: "March 2027",
-  parents: {
-    father: "Hiralal Sharma",
-    mother: "Manju Sharma",
-  },
-  grandParents: {
-    grandfather: "Late Shukdev Sharma",
-    grandmother: "Kabutari Devi",
-  },
+  brideSide: [
+    "दादाजी: श्री [नाम]",
+    "पिताजी: श्री [नाम]",
+    "माताजी: श्रीमती [नाम]",
+    "भ्राता: [नाम]",
+  ],
+  groomSide: [
+    "दादाजी: श्री [नाम]",
+    "पिताजी: श्री [नाम]",
+    "माताजी: श्रीमती [नाम]",
+    "भ्राता: [नाम]",
+  ],
 };
