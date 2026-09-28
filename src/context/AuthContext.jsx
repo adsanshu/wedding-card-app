@@ -1,17 +1,14 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useState, useContext } from 'react';
 
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [isUnlocked, setIsUnlocked] = useState(false);
-  const [isLockModalOpen, setIsLockModalOpen] = useState(false);
-
-  const correctPin = "032027"; // Passcode for March 2027
+  const SECRET_PIN = "123456"; // Aapka Passcode
 
   const unlockDiary = (pin) => {
-    if (pin === correctPin) {
+    if (pin === SECRET_PIN) {
       setIsUnlocked(true);
-      setIsLockModalOpen(false);
       return true;
     }
     return false;
@@ -20,21 +17,10 @@ export function AuthProvider({ children }) {
   const lockDiary = () => setIsUnlocked(false);
 
   return (
-    <AuthContext.Provider
-      value={{
-        isUnlocked,
-        isLockModalOpen,
-        setIsLockModalOpen,
-        unlockDiary,
-        lockDiary,
-      }}
-    >
+    <AuthContext.Provider value={{ isUnlocked, unlockDiary, lockDiary }}>
       {children}
     </AuthContext.Provider>
   );
-}
+};
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
-
+export const useAuth = () => useContext(AuthContext);
