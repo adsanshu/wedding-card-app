@@ -1,46 +1,34 @@
-import React from "react";
-import { familyData } from "../../data/familyData";
+import { familyData } from '../../data/familyData';
 
 export default function FamilySection() {
   return (
-    <section className="py-16 px-4 bg-white border-t border-amber-100">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-[#800020] font-serif mb-2">
-          स्नेह एवं आशीर्वाद
-        </h2>
-        <p className="text-xs text-amber-800 uppercase tracking-widest mb-10">
-          With Best Compliments & Blessings
-        </p>
+    <section id="family" className="bg-[#FAF6F0] border border-gold/30 rounded-2xl p-6 md:p-8 shadow-md">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-maroon font-serifCustom">स्नेह एवं आशीर्वाद सहित</h2>
+        <p className="text-sm text-gray-600">Our Beloved Family</p>
+      </div>
 
-        <div className="bg-[#FAF6F0] p-8 rounded-3xl border border-amber-200/80 shadow-sm max-w-md mx-auto space-y-6">
-          <div>
-            <p className="text-xs uppercase text-amber-800 font-bold tracking-wider mb-1">
-              Grandparents
-            </p>
-            <p className="text-base font-semibold text-gray-800">
-              {familyData.grandParents.grandmother}
-            </p>
-            <p className="text-sm text-gray-600">
-              & {familyData.grandParents.grandfather}
-            </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* વહૂ पक्ष / Bride Side */}
+        <div className="bg-white p-6 rounded-xl border border-gold/30 text-center space-y-3">
+          <h3 className="text-xl font-bold text-maroon border-b border-gold/20 pb-2">वधू पक्ष</h3>
+          <div className="space-y-1 text-sm text-gray-700">
+            {familyData.brideSide.map((member, idx) => (
+              <p key={idx}>{member}</p>
+            ))}
           </div>
+        </div>
 
-          <hr className="border-amber-200/60 w-1/2 mx-auto" />
-
-          <div>
-            <p className="text-xs uppercase text-amber-800 font-bold tracking-wider mb-1">
-              Parents
-            </p>
-            <p className="text-base font-semibold text-gray-800">
-              Smt. {familyData.parents.mother}
-            </p>
-            <p className="text-sm text-gray-600">
-              & Shri {familyData.parents.father}
-            </p>
+        {/* वर पक्ष / Groom Side */}
+        <div className="bg-white p-6 rounded-xl border border-gold/30 text-center space-y-3">
+          <h3 className="text-xl font-bold text-maroon border-b border-gold/20 pb-2">वर पक्ष</h3>
+          <div className="space-y-1 text-sm text-gray-700">
+            {familyData.groomSide.map((member, idx) => (
+              <p key={idx}>{member}</p>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-
