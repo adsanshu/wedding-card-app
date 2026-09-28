@@ -1,11 +1,8 @@
-import React from "react";
-import { familyData } from "../../data/familyData";
-
 export default function Footer() {
   return (
-    <footer className="py-6 text-center text-xs text-gray-500 border-t border-amber-200/50 bg-[#FAF6F0]">
-      <p>{familyData.brideName} & {familyData.groomName} Wedding • {familyData.weddingMonthYear}</p>
+    <footer className="bg-maroon text-gold text-center py-6 border-t border-gold/30 text-xs">
+      <p className="font-serifCustom text-base mb-1">शुभ विवाह</p>
+      <p className="opacity-80">Designed with ❤️ for Wedding Celebrations</p>
     </footer>
   );
 }
-
