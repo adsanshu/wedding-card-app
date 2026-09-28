@@ -1,58 +1,107 @@
-import { useState } from 'react';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import Navbar from './components/layout/Navbar';
-import HeroSection from './components/sections/HeroSection';
-import EventGrid from './components/sections/EventGrid';
-import CompleteSchedule from './components/sections/CompleteSchedule';
-import VenueMap from './components/sections/VenueMap';
-import FamilySection from './components/sections/FamilySection';
-import LockModal from './components/diary/LockModal';
-import DiaryHome from './components/diary/DiaryHome';
-import Footer from './components/layout/Footer';
+import "./index.css";
 
-function MainContent() {
-  const [isLockOpen, setIsLockOpen] = useState(false);
-  const { isUnlocked } = useAuth();
-
+function App() {
   return (
-    <div className="min-h-screen bg-cream text-gray-800">
-      <Navbar onOpenDiary={() => setIsLockOpen(true)} />
-      
-      <main className="max-w-6xl mx-auto px-4 py-6 space-y-16">
-        {/* Public Sections */}
-        <HeroSection />
-        <EventGrid />
-        <CompleteSchedule />
-        <VenueMap />
-        <FamilySection />
+    <div className="wedding-site">
+      {/* Navigation */}
+      <header className="navbar">
+        <div className="brand">Our Wedding</div>
 
-        {/* Locked / Unlocked Diary Section */}
-        {isUnlocked ? (
-          <DiaryHome />
-        ) : (
-          <div className="text-center bg-white p-10 rounded-2xl shadow-md border border-gold/30 my-8">
-            <h2 className="text-2xl font-bold text-maroon mb-2">Our Wedding Diary 📖</h2>
-            <p className="text-gray-600 mb-4">विशेष क्षणों की झलकियाँ देखने के लिए लॉक खोलें</p>
-            <button
-              onClick={() => setIsLockOpen(true)}
-              className="bg-maroon text-white px-6 py-2.5 rounded-full font-semibold shadow hover:bg-maroon/90"
-            >
-              Enter Passcode 🔒
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#invitation">Invitation</a>
+          <a href="#events">Events</a>
+          <a href="#memories">Memories</a>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <main>
+        <section id="home" className="hero">
+          <div className="hero-decoration hero-decoration-left">❦</div>
+
+          <div className="hero-content">
+            <p className="eyebrow">Together with their families</p>
+
+            <p className="small-title">YOU ARE CORDIALLY INVITED</p>
+
+            <h1>
+              A Beautiful
+              <span>Beginning</span>
+            </h1>
+
+            <div className="ornament">✦ ❧ ✦</div>
+
+            <p className="couple-name">
+              Bride <span>&</span> Groom
+            </p>
+
+            <p className="wedding-date">
+              11 · 12 · 2026
+            </p>
+
+            <button className="primary-button">
+              View Invitation
             </button>
           </div>
-        )}
-      </main>
 
-      <Footer />
-      <LockModal isOpen={isLockOpen} onClose={() => setIsLockOpen(false)} />
-    </div>
-  );
-}
+          <div className="hero-decoration hero-decoration-right">❧</div>
+        </section>
 
-export default function App() {
-  return (
-    <AuthProvider>
-      <MainContent />
-    </AuthProvider>
-  );
-}
+        {/* Invitation */}
+        <section id="invitation" className="content-section">
+          <p className="section-label">THE INVITATION</p>
+
+          <h2>
+            With love,
+            <span>we invite you</span>
+          </h2>
+
+          <p className="section-text">
+            Two hearts, two families and one beautiful journey.
+            We would be delighted to celebrate this special day
+            with you.
+          </p>
+        </section>
+
+        {/* Events */}
+        <section id="events" className="events-section">
+          <p className="section-label">OUR CELEBRATIONS</p>
+
+          <h2>
+            Wedding
+            <span>Events</span>
+          </h2>
+
+          <div className="event-grid">
+            <article className="event-card">
+              <div className="event-icon">❀</div>
+              <h3>Haldi</h3>
+              <p>10 December · 11:00 AM</p>
+            </article>
+
+            <article className="event-card">
+              <div className="event-icon">✦</div>
+              <h3>Mehndi</h3>
+              <p>10 December · 5:00 PM</p>
+            </article>
+
+            <article className="event-card">
+              <div className="event-icon">♡</div>
+              <h3>Wedding</h3>
+              <p>11 December · 7:00 PM</p>
+            </article>
+          </div>
+        </section>
+
+        {/* Memories */}
+        <section id="memories" className="content-section memories-section">
+          <p className="section-label">OUR STORY</p>
+
+          <h2>
+            Moments to
+            <span>remember</span>
+          </h2>
+
+          <p className="section-text">
+           
