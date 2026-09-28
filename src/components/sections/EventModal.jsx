@@ -1,50 +1,37 @@
-
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
-
 export default function EventModal({ event, onClose }) {
   if (!event) return null;
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-[#FAF6F0] p-6 rounded-2xl max-w-sm w-full border border-amber-300 relative text-center shadow-2xl"
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      <div className="bg-cream border-2 border-gold rounded-2xl p-6 max-w-md w-full shadow-2xl relative text-center">
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-4 text-xl text-gray-600 hover:text-maroon font-bold"
         >
-          <button
-            onClick={onClose}
-            className="absolute right-4 top-4 text-gray-500 hover:text-black"
-          >
-            <X size={20} />
-          </button>
+          ✕
+        </button>
 
-          <h3 className="text-2xl font-bold text-[#800020] mt-2">
-            {event.hindiTitle}
-          </h3>
-          <p className="text-sm font-semibold text-gray-700 mb-4">{event.title}</p>
+        <div className="text-4xl mb-2">🌼</div>
+        <h3 className="text-2xl font-bold text-maroon uppercase tracking-wider">{event.title}</h3>
+        <p className="text-lg font-semibold text-gray-700 mb-4">{event.hindiTitle}</p>
 
-          <p className="text-xs text-gray-600 bg-white p-3 rounded-xl border border-amber-200 mb-4">
-            {event.description}
-          </p>
+        <div className="bg-white p-4 rounded-xl border border-gold/30 space-y-2 text-sm text-gray-700 text-left mb-6">
+          <p><strong>Date:</strong> {event.date}</p>
+          <p><strong>Time:</strong> {event.time}</p>
+          <p><strong>Venue:</strong> {event.venue}</p>
+          {event.description && (
+            <p className="pt-2 border-t border-gray-100 text-xs text-gray-600">{event.description}</p>
+          )}
+        </div>
 
-          <div className="text-xs text-gray-700 space-y-2 mb-6 text-left bg-amber-50/50 p-4 rounded-xl border border-amber-100">
-            <p><strong>Date:</strong> {event.date}</p>
-            <p><strong>Time:</strong> {event.time}</p>
-            <p><strong>Venue:</strong> {event.venue}</p>
-          </div>
-
-          <button
-            onClick={onClose}
-            className="w-full bg-[#800020] text-white py-2 rounded-xl text-xs font-semibold"
-          >
-            Close
-          </button>
-        </motion.div>
+        <a
+          href="#venue"
+          onClick={onClose}
+          className="inline-block w-full bg-maroon text-gold font-bold py-2.5 rounded-lg border border-gold/40 shadow hover:bg-maroon/90 transition text-sm"
+        >
+          📍 View Location
+        </a>
       </div>
-    </AnimatePresence>
+    </div>
   );
 }
