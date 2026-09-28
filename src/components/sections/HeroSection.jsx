@@ -1,52 +1,50 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { familyData } from "../../data/familyData";
-
-export default function HeroSection({ onExploreClick }) {
+export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-[#FAF6F0] flex flex-col items-center justify-center p-4 text-center relative pt-20">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-w-xl w-full bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-amber-200/80 shadow-xl"
-      >
-        <p className="text-lg font-serif text-amber-800 tracking-widest mb-2">
-          ॥ ॐ श्री गणेशाय नमः ॥
-        </p>
+    <section id="hero" className="space-y-12 pt-4">
+      {/* Screen 1: Cover Page */}
+      <div className="relative bg-white border-2 border-gold/40 rounded-3xl p-8 md:p-14 text-center shadow-xl overflow-hidden">
+        {/* Corner Floral Design Accents */}
+        <div className="absolute -top-6 -left-6 text-5xl opacity-40 select-none">🌺</div>
+        <div className="absolute -top-6 -right-6 text-5xl opacity-40 select-none">🌺</div>
+        <div className="absolute -bottom-6 -left-6 text-5xl opacity-40 select-none">🌺</div>
+        <div className="absolute -bottom-6 -right-6 text-5xl opacity-40 select-none">🌺</div>
 
-        <h1 className="text-4xl md:text-5xl font-bold text-[#800020] my-3 font-serif">
+        <div className="text-maroon font-bold text-xl md:text-2xl mb-2">ॐ श्री गणेशाय नमः</div>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-maroon font-serifCustom my-4 tracking-wide">
           शुभ विवाह
         </h1>
-
-        <p className="text-xs text-amber-900 tracking-wider uppercase my-2 font-medium">
-          Sneha Evam Aashirwad Sahit
+        
+        <p className="text-xl md:text-3xl text-gray-800 font-bold my-3">
+          [ वर का नाम ] <span className="text-gold font-normal">&</span> [ वधू का नाम ]
+        </p>
+        
+        <p className="text-sm md:text-base text-gray-600 font-semibold mb-6">
+          दो हृदय, एक जीवन | Wedding Invitation & Memories
         </p>
 
-        <div className="text-2xl md:text-3xl font-semibold text-gray-800 my-4">
-          <span className="text-[#800020] font-bold">{familyData.brideName}</span>
-          <br />
-          <span className="text-amber-600 text-xl font-normal">संग</span>
-          <br />
-          <span className="text-[#800020] font-bold">{familyData.groomName}</span>
-        </div>
+        <a
+          href="#invite"
+          className="inline-block bg-maroon text-gold border border-gold font-bold px-6 py-2.5 rounded-full shadow-lg hover:scale-105 transition-transform text-sm"
+        >
+          📜 View Invitation
+        </a>
+      </div>
 
-        <div className="my-4 py-2 px-6 bg-amber-100/60 rounded-full inline-block border border-amber-200">
-          <p className="text-sm font-semibold text-amber-900">{familyData.weddingMonthYear}</p>
-        </div>
+      {/* Screen 2: Public Invitation Text */}
+      <div id="invite" className="bg-[#FAF6F0] border border-gold/30 rounded-2xl p-6 md:p-10 text-center shadow-md">
+        <h2 className="text-2xl md:text-3xl font-bold text-maroon mb-4">सादर आमंत्रण</h2>
+        
+        <p className="text-gray-700 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-6">
+          परमपिता परमेश्वर की असीम अनुकंपा से हमारे सुपुत्र एवं सुपुत्री का शुभ विवाह संपन्न होने जा रहा है। 
+          इस मांगलिक अवसर पर आप सहपरिवार आमंत्रित हैं।
+        </p>
 
-        <div className="mt-6">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={onExploreClick}
-            className="bg-[#800020] text-white px-6 py-2.5 rounded-full text-sm font-medium shadow-md hover:bg-[#600018] transition-all"
-          >
-            View Event Details ↓
-          </motion.button>
+        <div className="inline-block bg-white border-2 border-gold/40 rounded-xl p-4 shadow-inner text-center">
+          <p className="text-maroon font-bold text-lg">[ वर का नाम ] & [ वधू का नाम ]</p>
+          <p className="text-gray-600 text-sm font-semibold mt-1">Wedding Date: 11 December 2026</p>
+          <p className="text-xs text-gray-500 mt-2 font-semibold">आप सादर आमंत्रित हैं।</p>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
-
